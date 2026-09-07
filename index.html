@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuraSaaS - Next-Gen Intelligence Platform</title>
+    <title>Vishwas Finserv Services - Comprehensive Financial & Insurance Advisory</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -13,27 +14,325 @@
                     colors: {
                         brand: {
                             50: '#f0fdf4',
-                            500: '#10b981',
-                            600: '#059669',
-                            950: '#022c22',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            950: '#082f49',
                         }
                     }
                 }
             }
         }
     </script>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-        
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #030712;
+            background-color: #070b14;
             color: #f3f4f6;
             overflow-x: hidden;
         }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #38bdf8 0%, #34d399 50%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .neon-glow {
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.15);
+        }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-grid min-h-screen relative selection:bg-sky-500 selection:text-black">
 
+    <!-- Top Info Bar -->
+    <div class="bg-slate-900 border-b border-white/5 py-2 px-4 text-xs text-gray-400">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-phone text-sky-400 mr-2"></i> +91 870 751 7595</span>
+                <span><i class="fa-solid fa-envelope text-sky-400 mr-2"></i> info@vishwasfinserve.com</span>
+            </div>
+            <div>
+                <span><i class="fa-solid fa-clock text-sky-400 mr-2"></i> Mon - Sat: 9:30 AM - 7:00 PM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-emerald-500 flex items-center justify-center shadow-lg shadow-sky-500/30">
+                    <i class="fa-solid fa-shield-halved text-black text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-white block">VISHWAS</span>
+                    <span class="text-[10px] tracking-widest text-sky-400 font-semibold block uppercase">FINSERVE SERVICES</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#services" class="hover:text-sky-400 transition">Services</a>
+                <a href="#stats" class="hover:text-sky-400 transition">Track Record</a>
+                <a href="#calculator" class="hover:text-sky-400 transition">Calculators</a>
+                <a href="#contact" class="hover:text-sky-400 transition">Get Quote</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="https://wa.me/918707517595" target="_blank" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition shadow-lg shadow-emerald-600/20 flex items-center">
+                    <i class="fa-brands fa-whatsapp text-lg mr-2"></i> WhatsApp
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 pt-2 glass-panel border-t border-white/10">
+            <div class="flex flex-col space-y-4 text-sm font-medium text-gray-300">
+                <a href="#services" class="hover:text-sky-400 transition">Services</a>
+                <a href="#stats" class="hover:text-sky-400 transition">Track Record</a>
+                <a href="#calculator" class="hover:text-sky-400 transition">Calculators</a>
+                <a href="#contact" class="hover:text-sky-400 transition">Get Quote</a>
+                <a href="https://wa.me/918707517595" target="_blank" class="w-full text-center py-3 rounded-xl bg-emerald-600 text-white font-semibold">Chat on WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-6 relative">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-panel text-emerald-400 text-xs font-semibold mb-6 neon-glow">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Trusted Financial & Insurance Partners</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
+                Aapke Samriddhi Aur Suraksha Ka Sacha <span class="text-gradient">Vishwas</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+                Comprehensive Insurance, Mutual Fund Investments, and Loan Advisory tailored to safeguard your family and multiply your financial wealth.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-6 mb-12 text-sm text-gray-300">
+                <div class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>100% Claim Settlement Support</span></div>
+                <div class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Unbiased Advisory</span></div>
+                <div class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Zero Hidden Charges</span></div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold text-base hover:opacity-95 shadow-lg shadow-sky-500/25 transition">
+                    Get Free Quote <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+                <a href="https://wa.me/918707517595" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-white font-semibold text-base hover:bg-white/10 transition flex items-center justify-center">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-xl mr-2"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Grid Section -->
+    <section id="stats" class="py-12 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 text-center">
+                <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl mx-auto mb-4">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <h3 class="text-3xl font-extrabold text-white">5,500+</h3>
+                <p class="text-sm text-gray-400 mt-1">Satisfied Families</p>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 text-center">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mx-auto mb-4">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+                <h3 class="text-3xl font-extrabold text-white">₹45+ Cr</h3>
+                <p class="text-sm text-gray-400 mt-1">Claims Settled</p>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 text-center">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl mx-auto mb-4">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="text-3xl font-extrabold text-white">₹120+ Cr</h3>
+                <p class="text-sm text-gray-400 mt-1">Assets Managed</p>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 text-center">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl mx-auto mb-4">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <h3 class="text-3xl font-extrabold text-white">99.4%</h3>
+                <p class="text-sm text-gray-400 mt-1">Claim Assistance Ratio</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-5xl font-bold text-white mb-4">Comprehensive Financial Solutions</h2>
+                <p class="text-gray-400 text-base">Tailored financial products designed to safeguard your family and accelerate wealth creation.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-sky-500/50 transition">
+                    <div class="w-14 h-14 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Health Insurance & Mediclaim</h3>
+                    <p class="text-gray-400 text-sm mb-6">Complete medical coverage for individuals, families, and senior citizens with cashless hospitalization across 10,000+ network hospitals.</p>
+                    <a href="#contact" class="text-sky-400 text-sm font-semibold hover:underline flex items-center">Secure Family <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-emerald-500/50 transition">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Term Life Insurance</h3>
+                    <p class="text-gray-400 text-sm mb-6">High life cover options up to ₹2 Crore at affordable monthly premiums to ensure your loved ones maintain their lifestyle.</p>
+                    <a href="#contact" class="text-emerald-400 text-sm font-semibold hover:underline flex items-center">Protect Future <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-indigo-500/50 transition">
+                    <div class="w-14 h-14 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">SIP & Mutual Funds</h3>
+                    <p class="text-gray-400 text-sm mb-6">Disciplined wealth creation through Systematic Investment Plans (SIPs) tailored for child education, retirement, and long-term goals.</p>
+                    <a href="#contact" class="text-indigo-400 text-sm font-semibold hover:underline flex items-center">Start SIP <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIP Calculator Section -->
+    <section id="calculator" class="py-20 px-6 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto glass-panel p-8 sm:p-12 rounded-3xl border border-white/15 shadow-2xl">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-white mb-2">SIP Wealth Calculator</h2>
+                <p class="text-gray-400 text-sm">Calculate your investment returns and wealth growth instantly.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm text-gray-300 font-medium mb-2">Monthly Investment (₹)</label>
+                        <input type="number" id="sip-amount" value="5000" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white font-bold focus:outline-none focus:border-sky-500" oninput="calculateSIP()">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-300 font-medium mb-2">Expected Return Rate (% p.a)</label>
+                        <input type="number" id="sip-rate" value="12" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white font-bold focus:outline-none focus:border-sky-500" oninput="calculateSIP()">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-300 font-medium mb-2">Time Period (Years)</label>
+                        <input type="number" id="sip-years" value="10" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white font-bold focus:outline-none focus:border-sky-500" oninput="calculateSIP()">
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/80 p-6 rounded-2xl border border-white/10 space-y-6">
+                    <div>
+                        <p class="text-xs text-gray-400">Total Invested Amount</p>
+                        <h4 id="res-invested" class="text-2xl font-bold text-white mt-1">₹ 6,00,000</h4>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400">Estimated Wealth Gain</p>
+                        <h4 id="res-gain" class="text-2xl font-bold text-emerald-400 mt-1">₹ 5,61,695</h4>
+                    </div>
+                    <div class="pt-4 border-t border-white/10">
+                        <p class="text-xs text-gray-400">Expected Future Value</p>
+                        <h4 id="res-total" class="text-3xl font-extrabold text-sky-400 mt-1">₹ 11,61,695</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Form / Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-2xl mx-auto glass-panel p-8 sm:p-12 rounded-3xl border border-white/15">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-white mb-2">Get Instant Expert Advice</h2>
+                <p class="text-gray-400 text-sm">Fill in your details for a free, non-obligatory consultation.</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); alert('Thank you! Your request has been submitted successfully. Our expert will contact you shortly.');" class="space-y-6">
+                <div>
+                    <label class="block text-sm text-gray-300 font-medium mb-2">Full Name *</label>
+                    <input type="text" required placeholder="e.g. Rahul Sharma" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500">
+                </div>
+                <div>
+                    <label class="block text-sm text-gray-300 font-medium mb-2">Mobile Number *</label>
+                    <input type="tel" required placeholder="10-digit mobile number" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500">
+                </div>
+                <div>
+                    <label class="block text-sm text-gray-300 font-medium mb-2">Required Service *</label>
+                    <select class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500">
+                        <option>Health Insurance</option>
+                        <option>Term Life Insurance</option>
+                        <option>SIP & Mutual Funds</option>
+                        <option>Home & Personal Loans</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-500 text-black font-bold hover:opacity-95 transition shadow-lg shadow-sky-500/25">
+                    Request Callback
+                </button>
+                <p class="text-center text-xs text-gray-500"><i class="fa-solid fa-lock mr-1"></i> Your information is 100% confidential.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-white/10 py-8 px-6 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 Vishwas Finserv Services. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu & SIP Calculator -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // SIP Calculator Logic
+        function calculateSIP() {
+            const p = parseFloat(document.getElementById('sip-amount').value) || 0;
+            const i = (parseFloat(document.getElementById('sip-rate').value) / 12 / 100) || 0;
+            const n = (parseFloat(document.getElementById('sip-years').value) || 0) * 12;
+
+            if (p > 0 && i > 0 && n > 0) {
+                const totalInvested = p * n;
+                const futureValue = p * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
+                const wealthGain = futureValue - totalInvested;
+
+                document.getElementById('res-invested').innerText = '₹ ' + Math.round(totalInvested).toLocaleString('en-IN');
+                document.getElementById('res-gain').innerText = '₹ ' + Math.round(wealthGain).toLocaleString('en-IN');
+                document.getElementById('res-total').innerText = '₹ ' + Math.round(futureValue).toLocaleString('en-IN');
+            }
+        }
+        calculateSIP();
+    </script>
+</body>
+</html>
         .glass-panel {
             background: rgba(17, 24, 39, 0.7);
             backdrop-filter: blur(16px);
