@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vishwas Finserv Services - Comprehensive Financial & Insurance Advisory</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,15 +22,15 @@
             }
         }
     </script>
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #070b14;
+            background-color: #030712;
             color: #f3f4f6;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         .glass-panel {
             background: rgba(15, 23, 42, 0.75);
@@ -46,7 +45,7 @@
             -webkit-text-fill-color: transparent;
         }
         .neon-glow {
-            box-shadow: 0 0 30px rgba(14, 165, 233, 0.15);
+            box-shadow: 0 0 35px rgba(14, 165, 233, 0.18);
         }
         .bg-grid {
             background-size: 40px 40px;
@@ -57,20 +56,23 @@
 </head>
 <body class="bg-grid min-h-screen relative selection:bg-sky-500 selection:text-black">
 
-    <!-- Top Info Bar -->
-    <div class="bg-slate-900 border-b border-white/5 py-2 px-4 text-xs text-gray-400">
+    <div class="bg-slate-900 border-b border-white/5 py-2.5 px-4 text-xs text-gray-400">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center space-x-6">
                 <span><i class="fa-solid fa-phone text-sky-400 mr-2"></i> +91 870 751 7595</span>
                 <span><i class="fa-solid fa-envelope text-sky-400 mr-2"></i> info@vishwasfinserve.com</span>
             </div>
-            <div>
+            <div class="flex items-center space-x-4">
                 <span><i class="fa-solid fa-clock text-sky-400 mr-2"></i> Mon - Sat: 9:30 AM - 7:00 PM</span>
+                <div class="hidden sm:flex space-x-3 text-gray-400">
+                    <a href="#" class="hover:text-sky-400"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="hover:text-sky-400"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-sky-400"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Main Navigation Bar -->
     <header class="sticky top-0 z-50 glass-panel border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
@@ -84,38 +86,39 @@
             </div>
 
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#home" class="hover:text-sky-400 transition">Home</a>
+                <a href="#about" class="hover:text-sky-400 transition">About Us</a>
                 <a href="#services" class="hover:text-sky-400 transition">Services</a>
-                <a href="#stats" class="hover:text-sky-400 transition">Track Record</a>
-                <a href="#calculator" class="hover:text-sky-400 transition">Calculators</a>
-                <a href="#contact" class="hover:text-sky-400 transition">Get Quote</a>
+                <a href="#calculators" class="hover:text-sky-400 transition">Calculators</a>
+                <a href="#reviews" class="hover:text-sky-400 transition">Reviews</a>
+                <a href="#contact" class="hover:text-sky-400 transition">Contact Us</a>
             </nav>
 
             <div class="hidden md:flex items-center space-x-4">
-                <a href="https://wa.me/918707517595" target="_blank" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition shadow-lg shadow-emerald-600/20 flex items-center">
-                    <i class="fa-brands fa-whatsapp text-lg mr-2"></i> WhatsApp
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold text-sm transition shadow-lg shadow-sky-500/20">
+                    Get Free Quote
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 pt-2 glass-panel border-t border-white/10">
             <div class="flex flex-col space-y-4 text-sm font-medium text-gray-300">
+                <a href="#home" class="hover:text-sky-400 transition">Home</a>
+                <a href="#about" class="hover:text-sky-400 transition">About Us</a>
                 <a href="#services" class="hover:text-sky-400 transition">Services</a>
-                <a href="#stats" class="hover:text-sky-400 transition">Track Record</a>
-                <a href="#calculator" class="hover:text-sky-400 transition">Calculators</a>
-                <a href="#contact" class="hover:text-sky-400 transition">Get Quote</a>
-                <a href="https://wa.me/918707517595" target="_blank" class="w-full text-center py-3 rounded-xl bg-emerald-600 text-white font-semibold">Chat on WhatsApp</a>
+                <a href="#calculators" class="hover:text-sky-400 transition">Calculators</a>
+                <a href="#reviews" class="hover:text-sky-400 transition">Reviews</a>
+                <a href="#contact" class="hover:text-sky-400 transition">Contact Us</a>
+                <a href="#contact" class="w-full text-center py-3 rounded-xl bg-sky-500 text-white font-semibold">Get Free Quote</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="py-20 px-6 relative">
+    <section id="home" class="py-24 px-6 relative">
         <div class="max-w-5xl mx-auto text-center">
             <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-panel text-emerald-400 text-xs font-semibold mb-6 neon-glow">
                 <i class="fa-solid fa-circle-check"></i>
@@ -127,7 +130,7 @@
             </h1>
 
             <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-10">
-                Comprehensive Insurance, Mutual Fund Investments, and Loan Advisory tailored to safeguard your family and multiply your financial wealth.
+                Comprehensive Insurance, Mutual Fund Investments, and Loan Advisory tailored to safeguard your family and multiply your financial wealth with complete transparency.
             </p>
 
             <div class="flex flex-wrap justify-center gap-6 mb-12 text-sm text-gray-300">
@@ -145,90 +148,131 @@
                 </a>
             </div>
         </div>
-    </section>
 
-    <!-- Stats Grid Section -->
-    <section id="stats" class="py-12 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="mt-20 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="glass-panel p-6 rounded-2xl border border-white/10 text-center">
-                <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl mx-auto mb-4">
-                    <i class="fa-solid fa-users"></i>
-                </div>
-                <h3 class="text-3xl font-extrabold text-white">5,500+</h3>
+                <h3 class="text-4xl font-extrabold text-white">5,500+</h3>
                 <p class="text-sm text-gray-400 mt-1">Satisfied Families</p>
             </div>
             <div class="glass-panel p-6 rounded-2xl border border-white/10 text-center">
-                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mx-auto mb-4">
-                    <i class="fa-solid fa-indian-rupee-sign"></i>
-                </div>
-                <h3 class="text-3xl font-extrabold text-white">₹45+ Cr</h3>
+                <h3 class="text-4xl font-extrabold text-white">₹45+ Cr</h3>
                 <p class="text-sm text-gray-400 mt-1">Claims Settled</p>
             </div>
             <div class="glass-panel p-6 rounded-2xl border border-white/10 text-center">
-                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl mx-auto mb-4">
-                    <i class="fa-solid fa-chart-line"></i>
-                </div>
-                <h3 class="text-3xl font-extrabold text-white">₹120+ Cr</h3>
+                <h3 class="text-4xl font-extrabold text-white">₹120+ Cr</h3>
                 <p class="text-sm text-gray-400 mt-1">Assets Managed</p>
             </div>
             <div class="glass-panel p-6 rounded-2xl border border-white/10 text-center">
-                <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl mx-auto mb-4">
-                    <i class="fa-solid fa-award"></i>
-                </div>
-                <h3 class="text-3xl font-extrabold text-white">99.4%</h3>
+                <h3 class="text-4xl font-extrabold text-white">99.4%</h3>
                 <p class="text-sm text-gray-400 mt-1">Claim Assistance Ratio</p>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 px-6">
+    <section id="about" class="py-24 px-6 bg-slate-900/40 border-t border-b border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-sky-400 text-xs font-bold uppercase tracking-widest block mb-2">About Vishwas Finserv</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Building Generational Wealth With Trust & Integrity</h2>
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    At Vishwas Finserv Services, we believe financial planning is not just about numbers—it is about securing peace of mind for you and your family. Founded with a vision to make professional insurance and investment advisory accessible to everyone, we stand by you through every milestone of life.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <h4 class="text-white font-bold mb-1"><i class="fa-solid fa-bullseye text-sky-400 mr-2"></i> Our Mission</h4>
+                        <p class="text-xs text-gray-400">To provide 100% transparent advisory and safeguard 100,000+ families financially.</p>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <h4 class="text-white font-bold mb-1"><i class="fa-solid fa-eye text-emerald-400 mr-2"></i> Our Vision</h4>
+                        <p class="text-xs text-gray-400">To become India's most trusted partner for wealth creation and risk management.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-panel p-8 rounded-3xl border border-white/10 relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-sky-500/10 rounded-full blur-3xl"></div>
+                <h3 class="text-2xl font-bold text-white mb-6">Why Choose Us?</h3>
+                <ul class="space-y-4 text-gray-300 text-sm">
+                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-sky-400 mt-1 mr-3"></i> <span><strong>Dedicated Relationship Manager:</strong> Personalized guidance for policy selection and claims.</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-sky-400 mt-1 mr-3"></i> <span><strong>Zero Hidden Processing Charges:</strong> Absolute clarity on all your investment and loan terms.</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-sky-400 mt-1 mr-3"></i> <span><strong>Express Claim Settlement:</strong> Faster processing and paperwork support during emergencies.</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-sky-400 mt-1 mr-3"></i> <span><strong>Multi-Insurer Comparison:</strong> We compare top insurers to get you the best coverage at lowest premiums.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl sm:text-5xl font-bold text-white mb-4">Comprehensive Financial Solutions</h2>
-                <p class="text-gray-400 text-base">Tailored financial products designed to safeguard your family and accelerate wealth creation.</p>
+                <span class="text-sky-400 text-xs font-bold uppercase tracking-widest block mb-2">Our Solutions</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white mb-4">Comprehensive Financial & Insurance Services</h2>
+                <p class="text-gray-400 text-base">Tailored products designed to safeguard your family's future and accelerate wealth creation.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-sky-500/50 transition">
-                    <div class="w-14 h-14 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl mb-6">
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-sky-500/50 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-sky-500 group-hover:text-black transition">
                         <i class="fa-solid fa-heart-pulse"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Health Insurance & Mediclaim</h3>
-                    <p class="text-gray-400 text-sm mb-6">Complete medical coverage for individuals, families, and senior citizens with cashless hospitalization across 10,000+ network hospitals.</p>
+                    <p class="text-gray-400 text-sm mb-6">Complete medical coverage for individuals, families, and senior citizens with cashless hospitalization across 10,000+ network hospitals nationwide.</p>
                     <a href="#contact" class="text-sky-400 text-sm font-semibold hover:underline flex items-center">Secure Family <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-emerald-500/50 transition">
-                    <div class="w-14 h-14 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-6">
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-emerald-500/50 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-500 group-hover:text-black transition">
                         <i class="fa-solid fa-shield"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Term Life Insurance</h3>
-                    <p class="text-gray-400 text-sm mb-6">High life cover options up to ₹2 Crore at affordable monthly premiums to ensure your loved ones maintain their lifestyle.</p>
+                    <p class="text-gray-400 text-sm mb-6">High life cover options up to ₹2 Crore at affordable monthly premiums to ensure your loved ones maintain their lifestyle no matter what happens.</p>
                     <a href="#contact" class="text-emerald-400 text-sm font-semibold hover:underline flex items-center">Protect Future <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-indigo-500/50 transition">
-                    <div class="w-14 h-14 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl mb-6">
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-indigo-500/50 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-indigo-500 group-hover:text-black transition">
                         <i class="fa-solid fa-coins"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">SIP & Mutual Funds</h3>
-                    <p class="text-gray-400 text-sm mb-6">Disciplined wealth creation through Systematic Investment Plans (SIPs) tailored for child education, retirement, and long-term goals.</p>
+                    <p class="text-gray-400 text-sm mb-6">Disciplined wealth creation through Systematic Investment Plans (SIPs) tailored for child education, marriage, and long-term financial goals.</p>
                     <a href="#contact" class="text-indigo-400 text-sm font-semibold hover:underline flex items-center">Start SIP <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-amber-500/50 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-black transition">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Home & Personal Loans</h3>
+                    <p class="text-gray-400 text-sm mb-6">Get competitive interest rate loan approvals with minimum documentation for buying your dream home or meeting urgent needs.</p>
+                    <a href="#contact" class="text-amber-400 text-sm font-semibold hover:underline flex items-center">Check Eligibility <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-purple-500/50 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-500 group-hover:text-black transition">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Vehicle & General Insurance</h3>
+                    <p class="text-gray-400 text-sm mb-6">Instant policy issuance and hassle-free renewals for Cars, Two-Wheelers, and commercial vehicles with cashless garage network.</p>
+                    <a href="#contact" class="text-purple-400 text-sm font-semibold hover:underline flex items-center">Insure Vehicle <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-teal-500/50 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-500 group-hover:text-black transition">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Retirement Planning</h3>
+                    <p class="text-gray-400 text-sm mb-6">Secure a comfortable post-retirement life with guaranteed pension plans, annuities, and smart asset allocation strategies.</p>
+                    <a href="#contact" class="text-teal-400 text-sm font-semibold hover:underline flex items-center">Plan Retirement <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SIP Calculator Section -->
-    <section id="calculator" class="py-20 px-6 bg-slate-900/50">
+ <section id="calculators" class="py-24 px-6 bg-slate-900/50 border-t border-b border-white/5">
         <div class="max-w-4xl mx-auto glass-panel p-8 sm:p-12 rounded-3xl border border-white/15 shadow-2xl">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-white mb-2">SIP Wealth Calculator</h2>
-                <p class="text-gray-400 text-sm">Calculate your investment returns and wealth growth instantly.</p>
+                <span class="text-sky-400 text-xs font-bold uppercase tracking-widest block mb-2">Smart Planning Tools</span>
+                <h2 class="text-3xl font-bold text-white mb-2">Interactive SIP Wealth Calculator</h2>
+                <p class="text-gray-400 text-sm">Calculate your investment returns and wealth growth instantly with high precision.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -265,46 +309,154 @@
         </div>
     </section>
 
-    <!-- Lead Form / Contact Section -->
-    <section id="contact" class="py-20 px-6">
-        <div class="max-w-2xl mx-auto glass-panel p-8 sm:p-12 rounded-3xl border border-white/15">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-white mb-2">Get Instant Expert Advice</h2>
-                <p class="text-gray-400 text-sm">Fill in your details for a free, non-obligatory consultation.</p>
+    <section id="reviews" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-sky-400 text-xs font-bold uppercase tracking-widest block mb-2">Testimonials</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white mb-4">What Our Clients Say About Us</h2>
+                <p class="text-gray-400 text-base">Real experiences from families whose financial futures we helped secure.</p>
             </div>
 
-            <form onsubmit="event.preventDefault(); alert('Thank you! Your request has been submitted successfully. Our expert will contact you shortly.');" class="space-y-6">
-                <div>
-                    <label class="block text-sm text-gray-300 font-medium mb-2">Full Name *</label>
-                    <input type="text" required placeholder="e.g. Rahul Sharma" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Vishwas Finserv helped me choose the right term insurance and health plan for my parents. Their claim settlement support is truly remarkable!"</p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold">RS</div>
+                        <div>
+                            <h4 class="text-white text-sm font-bold">Rahul Sharma</h4>
+                            <p class="text-xs text-gray-400">Software Engineer, Delhi</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-sm text-gray-300 font-medium mb-2">Mobile Number *</label>
-                    <input type="tel" required placeholder="10-digit mobile number" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500">
+
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"I started my SIP through their expert advisory 3 years ago. The portfolio returns and transparency are fantastic. Highly recommended!"</p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">AP</div>
+                        <div>
+                            <h4 class="text-white text-sm font-bold">Ananya Patel</h4>
+                            <p class="text-xs text-gray-400">Business Owner</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-sm text-gray-300 font-medium mb-2">Required Service *</label>
-                    <select class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500">
-                        <option>Health Insurance</option>
-                        <option>Term Life Insurance</option>
-                        <option>SIP & Mutual Funds</option>
-                        <option>Home & Personal Loans</option>
-                    </select>
+
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Zero hidden charges and very polite executives. They got my home loan approved within days with minimal paperwork."</p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">VK</div>
+                        <div>
+                            <h4 class="text-white text-sm font-bold">Vikram Kumar</h4>
+                            <p class="text-xs text-gray-400">Bank Manager</p>
+                        </div>
+                    </div>
                 </div>
-                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-500 text-black font-bold hover:opacity-95 transition shadow-lg shadow-sky-500/25">
-                    Request Callback
-                </button>
-                <p class="text-center text-xs text-gray-500"><i class="fa-solid fa-lock mr-1"></i> Your information is 100% confidential.</p>
-            </form>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 border-t border-white/10 py-8 px-6 text-center text-gray-500 text-sm">
+    <section id="contact" class="py-24 px-6 bg-slate-900/40 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-sky-400 text-xs font-bold uppercase tracking-widest block mb-2">Get In Touch</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Let's Secure Your Financial Future Today</h2>
+                <p class="text-gray-300 mb-8">Have questions about insurance policies or mutual funds? Reach out to us directly or request an instant callback from our certified financial experts.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 font-medium">Call Us Anytime</p>
+                            <h4 class="text-white font-bold">+91 870 751 7595</h4>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 font-medium">Email Support</p>
+                            <h4 class="text-white font-bold">info@vishwasfinserve.com</h4>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 font-medium">Working Hours</p>
+                            <h4 class="text-white font-bold">Mon - Sat: 9:30 AM - 7:00 PM</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-white/15">
+                <h3 class="text-2xl font-bold text-white mb-2">Request Expert Callback</h3>
+                <p class="text-gray-400 text-sm mb-6">Fill in your details for a free, non-obligatory consultation.</p>
+
+                <form onsubmit="event.preventDefault(); alert('Thank you! Your request has been submitted successfully. Our expert will contact you shortly.');" class="space-y-5">
+                    <div>
+                        <label class="block text-sm text-gray-300 font-medium mb-2">Full Name *</label>
+                        <input type="text" required placeholder="e.g. Rahul Sharma" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-300 font-medium mb-2">Mobile Number *</label>
+                        <input type="tel" required placeholder="10-digit mobile number" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-300 font-medium mb-2">Required Service *</label>
+                        <select class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500">
+                            <option>Health Insurance</option>
+                            <option>Term Life Insurance</option>
+                            <option>SIP & Mutual Funds</option>
+                            <option>Home & Personal Loans</option>
+                            <option>Vehicle Insurance</option>
+                            <option>Retirement Planning</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-500 text-black font-bold hover:opacity-95 transition shadow-lg shadow-sky-500/25">
+                        Submit Request
+                    </button>
+                    <p class="text-center text-xs text-gray-500"><i class="fa-solid fa-lock mr-1"></i> Your information is 100% confidential.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 border-t border-white/10 py-12 px-6 text-center text-gray-500 text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 mb-8">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center text-black font-bold">V</div>
+                <span class="text-white font-extrabold text-lg">Vishwas Finserv Services</span>
+            </div>
+            <div class="flex space-x-6 text-sm text-gray-400">
+                <a href="#home" class="hover:text-sky-400">Home</a>
+                <a href="#about" class="hover:text-sky-400">About</a>
+                <a href="#services" class="hover:text-sky-400">Services</a>
+                <a href="#reviews" class="hover:text-sky-400">Reviews</a>
+                <a href="#contact" class="hover:text-sky-400">Contact</a>
+            </div>
+        </div>
         <p>&copy; 2026 Vishwas Finserv Services. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Mobile Menu & SIP Calculator -->
     <script>
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
