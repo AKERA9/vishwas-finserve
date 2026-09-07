@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vishwas Finserv - Demo Admin Panel</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'Plus Jakarta Sans',sans-serif;background:#f5f7fb;color:#14213d}
+.sidebar{background:#0d1f3d}.card{box-shadow:0 8px 28px rgba(25,58,120,.07)}
+.hidden-page{display:none!important}
+@media(max-width:768px){
+.sidebar{
+ position:fixed;
+ top:0;
+ bottom:0;
+ left:0;
+ width:290px;
+ height:100vh;
+ transform:translateX(-100%);
+ transition:transform .25s ease;
+ z-index:60;
+}
+.sidebar.open{transform:translateX(0)}
+.mobile-overlay{
+ display:none;
+ position:fixed;
+ inset:0;
+ background:rgba(7,22,48,.45);
+ z-index:55;
+}
+.mobile-overlay.show{display:block}
+}
+</style>
+</head>
+<body>
+
+<div id="loginPage" class="min-h-screen flex items-center justify-center p-5 bg-gradient-to-br from-blue-50 to-white">
+<div class="w-full max-w-md bg-white rounded-3xl p-7 sm:p-9 card border border-slate-100">
+<div class="text-center">
+<div class="mx-auto w-16 h-16 rounded-2xl bg-[#0969dc] text-white flex items-center justify-center text-2xl"><i class="fa-solid fa-shield-halved"></i></div>
+<h1 class="text-2xl font-extrabold mt-5">Vishwas Finserv</h1>
+<p class="text-xs text-slate-500 mt-1">Admin Dashboard</p>
+</div>
+<form onsubmit="login(event)" class="mt-7 space-y-4">
+<div><label class="text-xs font-bold">Username</label><input id="username" required value="admin" class="mt-1.5 w-full h-12 rounded-xl border border-slate-200 px-4 text-sm bg-slate-50"></div>
+<div><label class="text-xs font-bold">Password</label><input id="password" required type="password" value="123" class="mt-1.5 w-full h-12 rounded-xl border border-slate-200 px-4 text-sm bg-slate-50"></div>
+<button class="w-full py-3.5 rounded-xl bg-[#0969dc] text-white font-extrabold text-sm">Login to Admin Panel</button>
+<p id="loginError" class="hidden text-center text-xs text-red-500 font-semibold">Invalid username or password.</p>
+</form>
+<div class="mt-5 rounded-xl bg-blue-50 p-3 text-center text-[11px] text-blue-700">Demo login: <b>admin</b> / <b>123</b></div>
+</div>
+</div>
+
+<div id="dashboardPage" class="hidden-page min-h-screen">
+<div id="mobileOverlay" class="mobile-overlay" onclick="closeSidebar()"></div>
+<aside id="sidebar" class="sidebar fixed top-0 bottom-0 left-0 w-64 text-white p-5 flex flex-col">
+<div class="flex items-center justify-between gap-3 px-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center"><i class="fa-solid fa-shield-halved"></i></div>
+<div><div class="font-extrabold text-sm">VISHWAS FINSERV</div><div class="text-[9px] text-blue-200 tracking-widest">ADMIN PANEL</div></div>
+</div>
+<button onclick="closeSidebar()" class="md:hidden w-9 h-9 rounded-xl bg-white/10 text-white" aria-label="Close menu">
+<i class="fa-solid fa-xmark"></i>
+</button>
+</div>
+<nav class="mt-9 space-y-2">
+<button onclick="showSection('overview')" class="w-full text-left px-4 py-3 rounded-xl bg-white/10 font-bold text-sm"><i class="fa-solid fa-chart-pie w-6"></i> Dashboard</button>
+<button onclick="showSection('leads')" class="w-full text-left px-4 py-3 rounded-xl hover:bg-white/10 font-semibold text-sm"><i class="fa-solid fa-users w-6"></i> Leads</button>
+<button onclick="showSection('policies')" class="w-full text-left px-4 py-3 rounded-xl hover:bg-white/10 font-semibold text-sm"><i class="fa-solid fa-file-shield w-6"></i> Policies</button>
+<button onclick="showSection('services')" class="w-full text-left px-4 py-3 rounded-xl hover:bg-white/10 font-semibold text-sm"><i class="fa-solid fa-layer-group w-6"></i> Services</button>
+<button onclick="showSection('settings')" class="w-full text-left px-4 py-3 rounded-xl hover:bg-white/10 font-semibold text-sm"><i class="fa-solid fa-gear w-6"></i> Settings</button>
+</nav>
+<div class="mt-auto">
+<button onclick="logout()" class="w-full px-4 py-3 rounded-xl bg-white/10 hover:bg-red-500/20 text-left text-sm font-bold"><i class="fa-solid fa-right-from-bracket w-6"></i> Logout</button>
+<p class="text-[9px] text-slate-400 mt-4 px-2">DEMO PANEL - DUMMY DATA</p>
+</div>
+</aside>
+
+<main class="md:ml-64 min-h-screen">
+<header class="h-16 sm:h-20 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-7 sticky top-0 z-40">
+<div class="flex items-center gap-3"><button onclick="toggleSidebar()" class="md:hidden w-10 h-10 rounded-xl bg-slate-100"><i class="fa-solid fa-bars"></i></button><div><h2 id="pageTitle" class="font-extrabold text-lg sm:text-xl">Dashboard</h2><p class="hidden sm:block text-[10px] text-slate-500">Manage your business from one place</p></div></div>
+<div class="flex items-center gap-3"><div class="hidden sm:block text-right"><div class="text-xs font-bold">Admin</div><div class="text-[10px] text-slate-400">Administrator</div></div><div class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-extrabold">A</div></div>
+</header>
+
+<div class="p-4 sm:p-7">
+
+<section id="overview" class="panel-section">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+<div class="bg-white rounded-2xl p-5 card border border-slate-100"><div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center"><i class="fa-solid fa-users"></i></div><div class="text-2xl font-extrabold mt-4">128</div><div class="text-[11px] text-slate-500 mt-1">Total Leads</div></div>
+<div class="bg-white rounded-2xl p-5 card border border-slate-100"><div class="w-10 h-10 rounded-xl bg-yellow-50 text-yellow-600 flex items-center justify-center"><i class="fa-solid fa-clock"></i></div><div class="text-2xl font-extrabold mt-4">24</div><div class="text-[11px] text-slate-500 mt-1">New Enquiries</div></div>
+<div class="bg-white rounded-2xl p-5 card border border-slate-100"><div class="w-10 h-10 rounded-xl bg-green-50 text-green-600 flex items-center justify-center"><i class="fa-solid fa-file-circle-check"></i></div><div class="text-2xl font-extrabold mt-4">67</div><div class="text-[11px] text-slate-500 mt-1">Active Policies</div></div>
+<div class="bg-white rounded-2xl p-5 card border border-slate-100"><div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center"><i class="fa-solid fa-indian-rupee-sign"></i></div><div class="text-2xl font-extrabold mt-4">₹4.8L</div><div class="text-[11px] text-slate-500 mt-1">Premium Collected</div></div>
+</div>
+
+<div class="grid lg:grid-cols-[1.5fr_1fr] gap-5 mt-5">
+<div class="bg-white rounded-2xl p-5 card border border-slate-100">
+<div class="flex justify-between items-center mb-5"><div><h3 class="font-extrabold text-sm">Recent Leads</h3><p class="text-[10px] text-slate-400 mt-1">Latest enquiries from website</p></div><button onclick="showSection('leads')" class="text-xs text-blue-600 font-bold">View All</button></div>
+<div class="overflow-x-auto"><table class="w-full text-left"><thead><tr class="text-[10px] text-slate-400 border-b"><th class="pb-3">Name</th><th class="pb-3">Service</th><th class="pb-3">Status</th></tr></thead><tbody id="recentLeads"></tbody></table></div>
+</div>
+<div class="bg-white rounded-2xl p-5 card border border-slate-100"><h3 class="font-extrabold text-sm">Enquiries by Service</h3><div class="space-y-5 mt-6">
+<div><div class="flex justify-between text-[11px] font-bold mb-2"><span>Health Insurance</span><span>42%</span></div><div class="h-2 bg-slate-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full" style="width:42%"></div></div></div>
+<div><div class="flex justify-between text-[11px] font-bold mb-2"><span>Life Insurance</span><span>24%</span></div><div class="h-2 bg-slate-100 rounded-full"><div class="h-2 bg-purple-500 rounded-full" style="width:24%"></div></div></div>
+<div><div class="flex justify-between text-[11px] font-bold mb-2"><span>Vehicle Insurance</span><span>19%</span></div><div class="h-2 bg-slate-100 rounded-full"><div class="h-2 bg-green-500 rounded-full" style="width:19%"></div></div></div>
+<div><div class="flex justify-between text-[11px] font-bold mb-2"><span>Loans / Other</span><span>15%</span></div><div class="h-2 bg-slate-100 rounded-full"><div class="h-2 bg-yellow-500 rounded-full" style="width:15%"></div></div></div>
+</div></div></div>
+</section>
+
+<section id="leads" class="panel-section hidden">
+<div class="bg-white rounded-2xl p-5 card border border-slate-100">
+<div class="flex flex-col sm:flex-row gap-3 justify-between mb-5"><div><h3 class="font-extrabold">Lead Management</h3><p class="text-[10px] text-slate-400 mt-1">Website se aane wali enquiries yahan dikhti hain.</p></div><button onclick="addLead()" class="bg-[#0969dc] text-white rounded-xl px-4 py-2.5 text-xs font-bold"><i class="fa-solid fa-plus mr-1"></i> Add Demo Lead</button></div>
+<div class="flex flex-wrap gap-2 mb-5"><input id="searchLead" oninput="renderLeads()" placeholder="Search name or mobile..." class="h-10 rounded-xl border border-slate-200 px-3 text-xs flex-1 min-w-[180px]"><select id="filterStatus" onchange="renderLeads()" class="h-10 rounded-xl border border-slate-200 px-3 text-xs"><option value="">All Status</option><option>New</option><option>Contacted</option><option>Converted</option></select></div>
+<div class="overflow-x-auto"><table class="w-full min-w-[700px] text-left"><thead><tr class="bg-slate-50 text-[10px] text-slate-500"><th class="p-3">Customer</th><th class="p-3">Mobile</th><th class="p-3">Service</th><th class="p-3">Date</th><th class="p-3">Status</th><th class="p-3">Action</th></tr></thead><tbody id="leadTable"></tbody></table></div>
+</div></section>
+
+<section id="policies" class="panel-section hidden">
+<div class="bg-white rounded-2xl p-5 card border border-slate-100">
+<div class="flex justify-between items-center mb-5"><div><h3 class="font-extrabold">Policies</h3><p class="text-[10px] text-slate-400 mt-1">Demo policy records</p></div><button onclick="alert('Demo: New policy form would open here.')" class="bg-[#0969dc] text-white rounded-xl px-4 py-2.5 text-xs font-bold">+ New Policy</button></div>
+<div class="overflow-x-auto"><table class="w-full min-w-[650px] text-left"><thead><tr class="bg-slate-50 text-[10px] text-slate-500"><th class="p-3">Policy No.</th><th class="p-3">Customer</th><th class="p-3">Type</th><th class="p-3">Premium</th><th class="p-3">Status</th></tr></thead><tbody>
+<tr class="border-b text-xs"><td class="p-3 font-bold">VF-2026-00124</td><td class="p-3">Amit Sharma</td><td class="p-3">Health</td><td class="p-3">₹18,450</td><td class="p-3"><span class="bg-green-50 text-green-700 px-2 py-1 rounded-full text-[10px] font-bold">Active</span></td></tr>
+<tr class="border-b text-xs"><td class="p-3 font-bold">VF-2026-00125</td><td class="p-3">Neha Gupta</td><td class="p-3">Life</td><td class="p-3">₹24,800</td><td class="p-3"><span class="bg-green-50 text-green-700 px-2 py-1 rounded-full text-[10px] font-bold">Active</span></td></tr>
+<tr class="border-b text-xs"><td class="p-3 font-bold">VF-2026-00126</td><td class="p-3">Rohit Verma</td><td class="p-3">Vehicle</td><td class="p-3">₹11,200</td><td class="p-3"><span class="bg-yellow-50 text-yellow-700 px-2 py-1 rounded-full text-[10px] font-bold">Pending</span></td></tr>
+</tbody></table></div></div></section>
+
+<section id="services" class="panel-section hidden">
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="bg-white rounded-2xl p-5 card border border-slate-100"><div class="w-11 h-11 rounded-xl bg-red-50 text-red-500 flex items-center justify-center"><i class="fa-solid fa-heart-pulse"></i></div><h3 class="font-extrabold text-sm mt-4">Health Insurance</h3><p class="text-[11px] text-slate-500 mt-2">Health & hospitalisation protection</p><button onclick="alert('Demo: Edit service')" class="mt-4 text-xs text-blue-600 font-bold">Edit Service →</button></div>
+<div class="bg-white rounded-2xl p-5 card border border-slate-100"><div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center"><i class="fa-solid fa-shield"></i></div><h3 class="font-extrabold text-sm mt-4">Life Insurance</h3><p class="text-[11px] text-slate-500 mt-2">Protect your family's future</p><button onclick="alert('Demo: Edit service')" class="mt-4 text-xs text-blue-600 font-bold">Edit Service →</button></div>
+<div class="bg-white rounded-2xl p-5 card border border-slate-100"><div class="w-11 h-11 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center"><i class="fa-solid fa-house"></i></div><h3 class="font-extrabold text-sm mt-4">Home Insurance</h3><p class="text-[11px] text-slate-500 mt-2">Protect home & belongings</p><button onclick="alert('Demo: Edit service')" class="mt-4 text-xs text-blue-600 font-bold">Edit Service →</button></div>
+<div class="bg-white rounded-2xl p-5 card border border-slate-100"><div class="w-11 h-11 rounded-xl bg-green-50 text-green-600 flex items-center justify-center"><i class="fa-solid fa-car"></i></div><h3 class="font-extrabold text-sm mt-4">Vehicle Insurance</h3><p class="text-[11px] text-slate-500 mt-2">Cover your car & vehicle</p><button onclick="alert('Demo: Edit service')" class="mt-4 text-xs text-blue-600 font-bold">Edit Service →</button></div>
+<div class="bg-white rounded-2xl p-5 card border border-slate-100"><div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center"><i class="fa-solid fa-building-columns"></i></div><h3 class="font-extrabold text-sm mt-4">Loans</h3><p class="text-[11px] text-slate-500 mt-2">Explore suitable loan options</p><button onclick="alert('Demo: Edit service')" class="mt-4 text-xs text-blue-600 font-bold">Edit Service →</button></div>
+<div class="bg-white rounded-2xl p-5 card border border-slate-100"><div class="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center"><i class="fa-solid fa-chart-line"></i></div><h3 class="font-extrabold text-sm mt-4">SIP & Mutual Funds</h3><p class="text-[11px] text-slate-500 mt-2">Plan for long-term goals</p><button onclick="alert('Demo: Edit service')" class="mt-4 text-xs text-blue-600 font-bold">Edit Service →</button></div>
+</div></section>
+
+<section id="settings" class="panel-section hidden">
+<div class="max-w-2xl bg-white rounded-2xl p-6 card border border-slate-100">
+<h3 class="font-extrabold">Website Settings</h3><p class="text-[10px] text-slate-400 mt-1">Demo fields to explain what an admin can manage.</p>
+<div class="space-y-4 mt-6">
+<div><label class="text-xs font-bold">Business Name</label><input value="Vishwas Finserv" class="mt-1.5 w-full h-11 rounded-xl border border-slate-200 px-4 text-sm"></div>
+<div><label class="text-xs font-bold">Contact Number</label><input value="+91 87075 17595" class="mt-1.5 w-full h-11 rounded-xl border border-slate-200 px-4 text-sm"></div>
+<div><label class="text-xs font-bold">Hero Heading</label><input value="Trusted Naam, Fantastic Kaam!" class="mt-1.5 w-full h-11 rounded-xl border border-slate-200 px-4 text-sm"></div>
+<button onclick="alert('Demo: Settings saved successfully.')" class="bg-[#0969dc] text-white px-5 py-3 rounded-xl text-xs font-bold">Save Changes</button>
+</div></div></section>
+
+</div></main></div>
+
+<script>
+let leads=[
+{name:"Amit Sharma",mobile:"9876543210",service:"Health Insurance",date:"07 Sep 2026",status:"New"},
+{name:"Neha Gupta",mobile:"9812345678",service:"Life Insurance",date:"07 Sep 2026",status:"Contacted"},
+{name:"Rohit Verma",mobile:"9988776655",service:"Vehicle Insurance",date:"06 Sep 2026",status:"Converted"},
+{name:"Pooja Singh",mobile:"9123456789",service:"Home Insurance",date:"06 Sep 2026",status:"New"},
+{name:"Karan Mehta",mobile:"9090909090",service:"Loans",date:"05 Sep 2026",status:"Contacted"},
+{name:"Simran Kaur",mobile:"9001122334",service:"SIP & Mutual Funds",date:"05 Sep 2026",status:"New"}];
+
+function login(e){e.preventDefault();if(username.value==="admin"&&password.value==="123"){loginPage.classList.add("hidden-page");dashboardPage.classList.remove("hidden-page");renderLeads();renderRecent()}else{loginError.classList.remove("hidden")}}
+function logout(){dashboardPage.classList.add("hidden-page");loginPage.classList.remove("hidden-page")}
+function toggleSidebar(){
+ const isOpen = sidebar.classList.contains("open");
+ if(isOpen){
+   closeSidebar();
+ }else{
+   sidebar.classList.add("open");
+   mobileOverlay.classList.add("show");
+ }
+}
+function closeSidebar(){
+ sidebar.classList.remove("open");
+ mobileOverlay.classList.remove("show");
+}
+function showSection(id){document.querySelectorAll(".panel-section").forEach(x=>x.classList.add("hidden"));document.getElementById(id).classList.remove("hidden");pageTitle.textContent={overview:"Dashboard",leads:"Lead Management",policies:"Policies",services:"Services",settings:"Settings"}[id];closeSidebar();window.scrollTo({top:0,behavior:"smooth"})}
+function badge(s){let c={New:"bg-blue-50 text-blue-700",Contacted:"bg-yellow-50 text-yellow-700",Converted:"bg-green-50 text-green-700"}[s];return `<span class="${c} px-2 py-1 rounded-full text-[10px] font-bold">${s}</span>`}
+function renderLeads(){let q=(document.getElementById("searchLead")?.value||"").toLowerCase(),f=document.getElementById("filterStatus")?.value||"";let a=leads.filter(l=>(!q||l.name.toLowerCase().includes(q)||l.mobile.includes(q))&&(!f||l.status===f));leadTable.innerHTML=a.map(l=>`<tr class="border-b text-xs hover:bg-slate-50"><td class="p-3 font-bold">${l.name}</td><td class="p-3">${l.mobile}</td><td class="p-3">${l.service}</td><td class="p-3 text-slate-500">${l.date}</td><td class="p-3">${badge(l.status)}</td><td class="p-3"><button onclick="changeStatus(${leads.indexOf(l)})" class="text-blue-600 font-bold">Update</button></td></tr>`).join("")}
+function renderRecent(){recentLeads.innerHTML=leads.slice(0,4).map(l=>`<tr class="border-b text-xs"><td class="py-3 font-bold">${l.name}</td><td class="py-3 text-slate-500">${l.service}</td><td class="py-3">${badge(l.status)}</td></tr>`).join("")}
+function changeStatus(i){let n={New:"Contacted",Contacted:"Converted",Converted:"New"};leads[i].status=n[leads[i].status];renderLeads();renderRecent()}
+function addLead(){leads.unshift({name:"Demo Customer",mobile:"9000000000",service:"Health Insurance",date:"07 Sep 2026",status:"New"});renderLeads();renderRecent();alert("Demo lead added successfully.")}
+</script>
+</body>
+</html>
