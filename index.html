@@ -10,7 +10,7 @@
             theme: {
                 extend: {
                     colors: {
-                        corporate: {
+                        pb: {
                             blue: '#0055d4',
                             dark: '#0f172a',
                             light: '#f8fafc'
@@ -25,100 +25,76 @@
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f8fafc;
+            background-color: #ffffff;
             color: #0f172a;
             scroll-behavior: smooth;
         }
-        .shadow-card {
-            box-shadow: 0 10px 30px rgba(0, 85, 212, 0.08);
+        .pb-card {
+            box-shadow: 0 4px 20px rgba(0, 85, 212, 0.08);
+            border: 1px solid #e2e8f0;
         }
     </style>
 </head>
 <body class="min-h-screen">
 
-    <div class="bg-slate-900 text-slate-300 py-2.5 px-4 text-xs">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex items-center space-x-6">
-                <span><i class="fa-solid fa-phone text-sky-400 mr-1.5"></i> +91 870 751 7595</span>
-                <span><i class="fa-solid fa-envelope text-sky-400 mr-1.5"></i> info@vishwasfinserve.com</span>
-            </div>
-            <div>
-                <span><i class="fa-solid fa-clock text-sky-400 mr-1.5"></i> Mon - Sat: 9:30 AM - 7:00 PM</span>
-            </div>
-        </div>
-    </div>
-
     <header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/30">
+                <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md">
                     <i class="fa-solid fa-shield-halved text-xl"></i>
                 </div>
                 <div>
-                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block">VISHWAS FINSERV</span>
-                    <span class="text-[9px] tracking-widest text-blue-600 font-bold block uppercase">Har Family Hogi Insured</span>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none">VISHWAS FINSERV</span>
+                    <span class="text-[10px] tracking-wider text-blue-600 font-bold uppercase block mt-1">Har Family Hogi Insured</span>
                 </div>
             </div>
 
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
-                <a href="#home" class="hover:text-blue-600 transition">Home</a>
-                <a href="#about" class="hover:text-blue-600 transition">About Us</a>
-                <a href="#services" class="hover:text-blue-600 transition">Services</a>
-                <a href="#calculators" class="hover:text-blue-600 transition">Calculators</a>
-                <a href="#reviews" class="hover:text-blue-600 transition">Reviews</a>
-            </nav>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-700">
+                <a href="#services" class="hover:text-blue-600">Insurance & Loans</a>
+                <a href="#benefits" class="hover:text-blue-600">Why Us</a>
+                <a href="#calculators" class="hover:text-blue-600">Calculators</a>
+                <a href="#reviews" class="hover:text-blue-600">Reviews</a>
+            </div>
 
             <div class="flex items-center space-x-4">
                 <a href="tel:+918707517595" class="px-5 py-2.5 rounded-full border-2 border-blue-600 text-blue-600 font-bold text-sm hover:bg-blue-600 hover:text-white transition flex items-center">
-                    <i class="fa-solid fa-phone-volume mr-2"></i> Call Us
+                    <i class="fa-solid fa-phone mr-2"></i> Call Us
                 </a>
-                <button id="menu-btn" class="md:hidden text-slate-800 text-2xl focus:outline-none">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-        </div>
-
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 pt-2 bg-white border-t border-slate-200">
-            <div class="flex flex-col space-y-4 text-sm font-semibold text-slate-700">
-                <a href="#home" class="hover:text-blue-600">Home</a>
-                <a href="#about" class="hover:text-blue-600">About Us</a>
-                <a href="#services" class="hover:text-blue-600">Services</a>
-                <a href="#calculators" class="hover:text-blue-600">Calculators</a>
-                <a href="#reviews" class="hover:text-blue-600">Reviews</a>
             </div>
         </div>
     </header>
 
-    <section id="home" class="py-16 px-6 bg-gradient-to-b from-blue-50/60 to-white">
+    <section class="py-12 px-6 bg-gradient-to-b from-blue-50/50 to-white">
         <div class="max-w-4xl mx-auto text-center">
+            
             <span class="inline-block bg-blue-100 text-blue-700 font-bold text-xs px-4 py-1.5 rounded-full mb-4">
-                <i class="fa-solid fa-bolt text-amber-500 mr-1"></i> Instant Quotes & Zero Paperwork
+                <i class="fa-solid fa-star text-amber-500 mr-1"></i> Only Vishwas Finserv certified experts will assist you
             </span>
 
-            <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
                 Trusted Naam, Fantastic <span class="text-blue-600">Kaam!</span>
             </h1>
-            <p class="text-slate-600 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
-                Comprehensive Insurance, Mutual Funds, and Loan Advisory tailored to safeguard your family and accelerate wealth creation.
+            <p class="text-slate-600 text-sm sm:text-base mb-8 max-w-xl mx-auto">
+                Comprehensive Insurance, Mutual Funds, and Loan Advisory with zero hidden processing charges.
             </p>
 
-            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-card border border-slate-200 text-left max-w-2xl mx-auto mb-10">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Get Instant Expert Quote</h3>
-                <p class="text-xs text-slate-500 mb-6">Only Vishwas Finserv certified experts will assist you with zero spam.</p>
+            <div class="bg-white p-6 sm:p-8 rounded-3xl pb-card text-left max-w-2xl mx-auto mb-8">
+                <h3 class="text-lg font-bold text-slate-900 mb-1">Get Instant Free Quote</h3>
+                <p class="text-xs text-slate-500 mb-6">Enter details below to view customized plans & prices.</p>
                 
-                <form onsubmit="event.preventDefault(); alert('Request submitted successfully! Our expert will call you back.');" class="space-y-4">
+                <form onsubmit="event.preventDefault(); alert('Quote request submitted successfully! Our expert will call you shortly.');" class="space-y-4">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-xs font-semibold text-slate-600 mb-1">Your Full Name *</label>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name *</label>
                             <input type="text" required placeholder="e.g. Rahul Sharma" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-600">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-slate-600 mb-1">Mobile Number *</label>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Mobile Number *</label>
                             <input type="tel" required placeholder="10-digit mobile number" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-600">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-slate-600 mb-1">Select Service *</label>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Select Service *</label>
                         <select class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-600">
                             <option>Health Insurance & Mediclaim</option>
                             <option>Term Life Insurance (Up to ₹2 Cr)</option>
@@ -127,183 +103,163 @@
                             <option>Car & Vehicle Insurance</option>
                         </select>
                     </div>
-                    <button type="submit" class="w-full py-4 rounded-xl bg-blue-600 text-white font-bold text-base hover:bg-blue-700 transition shadow-lg shadow-blue-500/25">
-                        View Prices & Get Free Quote <i class="fa-solid fa-arrow-right ml-2"></i>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-blue-600 text-white font-bold text-base hover:bg-blue-700 transition shadow-md">
+                        View Prices <i class="fa-solid fa-arrow-right ml-2"></i>
                     </button>
                 </form>
             </div>
 
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 text-slate-700 text-sm font-semibold">
-                <div class="flex items-center space-x-2 bg-white px-4 py-2.5 rounded-xl shadow-sm border border-slate-200">
-                    <div class="flex text-amber-400">
+            <div class="flex flex-wrap items-center justify-center gap-6 text-slate-700 text-sm font-semibold mb-12">
+                <div class="flex items-center space-x-2 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="flex text-amber-400 text-xs">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <span>We are rated <strong class="text-slate-900">4.5 / 5</strong></span>
+                    <span>We are rated <strong class="text-slate-900">4.5</strong></span>
                 </div>
-                <div class="flex items-center space-x-6">
-                    <span><i class="fa-solid fa-shield-check text-blue-600 mr-1"></i> 650+ Cities Covered</span>
-                    <span><i class="fa-solid fa-indian-rupee-sign text-emerald-600 mr-1"></i> ₹45+ Cr Claims Settled</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <div class="bg-white p-6 rounded-2xl pb-card text-center">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl mx-auto mb-3">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-slate-900">650+ Cities</h3>
+                    <p class="text-slate-500 text-xs mt-1">Secured Properties & Families</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl pb-card text-center">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl mx-auto mb-3">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-slate-900">₹23,900+ Crores</h3>
+                    <p class="text-slate-500 text-xs mt-1">Total Coverage Provided</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 px-6 bg-white border-t border-slate-200">
+    <section id="benefits" class="py-16 px-6 bg-white border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Exclusive Benefits of Vishwas Finserv</h2>
-                <p class="text-slate-600 text-sm">Why thousands of families trust us with their financial security and insurance needs.</p>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">Exclusive benefits of Vishwas Finserv</h2>
+                <p class="text-slate-600 text-sm">Everything you need for hassle-free financial planning.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-blue-500 transition">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-file-circle-check"></i>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-file-lines"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-slate-900 mb-1">Zero Documentation</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">Hassle-free digital verification and paperwork handled entirely by our team.</p>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Zero Documentation</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Quick paperless verification managed completely by our team.</p>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-blue-500 transition">
-                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center mb-4">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-slate-900 mb-1">Instant Policy Copy</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">Receive your official policy documents instantly on WhatsApp and Email.</p>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Instant Policy Copy</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Get your official policy documents instantly on WhatsApp and Email.</p>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-blue-500 transition">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
                         <i class="fa-solid fa-headset"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-slate-900 mb-1">24x7 Claims Support</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">Dedicated managers to assist you during medical emergencies or claim settlements.</p>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Claims Support</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Dedicated expert support during medical emergencies and settlements.</p>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-blue-500 transition">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl mb-4">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
                         <i class="fa-solid fa-tags"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-slate-900 mb-1">Affordable Premium</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">Compare plans across top insurers to get the lowest premiums with maximum coverage.</p>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Affordable Premium</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Best market prices with maximum coverage and zero hidden charges.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-16 px-6 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="text-blue-600 text-xs font-bold uppercase tracking-widest block mb-2">About Vishwas Finserv</span>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Building Generational Wealth With Trust & Integrity</h2>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                    At Vishwas Finserv Services, we believe financial planning is not just about numbers—it is about securing peace of mind for you and your family. Founded with a vision to make professional insurance and investment advisory accessible to everyone.
-                </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                        <h4 class="text-slate-900 font-bold mb-1 text-sm"><i class="fa-solid fa-bullseye text-blue-600 mr-2"></i> Our Mission</h4>
-                        <p class="text-xs text-slate-500">To provide transparent advisory and safeguard 100,000+ families.</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                        <h4 class="text-slate-900 font-bold mb-1 text-sm"><i class="fa-solid fa-eye text-emerald-600 mr-2"></i> Our Vision</h4>
-                        <p class="text-xs text-slate-500">To become India's most trusted partner for wealth creation.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
-                <h3 class="text-xl font-bold text-slate-900 mb-4">Why Families Trust Us</h3>
-                <ul class="space-y-3 text-slate-600 text-sm">
-                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-blue-600 mt-1 mr-3"></i> <span><strong>Dedicated Relationship Manager:</strong> Personalized guidance.</span></li>
-                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-blue-600 mt-1 mr-3"></i> <span><strong>Zero Hidden Processing Charges:</strong> Absolute clarity.</span></li>
-                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-blue-600 mt-1 mr-3"></i> <span><strong>Express Claim Settlement:</strong> Faster paperwork support.</span></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-16 px-6 bg-white border-t border-slate-200">
+    <section id="services" class="py-16 px-6 bg-slate-50 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Our Comprehensive Services</h2>
-                <p class="text-slate-600 text-sm">Tailored financial products designed to safeguard your family's future.</p>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">Our Core Services</h2>
+                <p class="text-slate-600 text-sm">Tailored financial products designed to safeguard your family.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:border-blue-500 transition">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-4">
+                <div class="bg-white p-8 rounded-2xl pb-card">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl mb-4">
                         <i class="fa-solid fa-heart-pulse"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Health Insurance</h3>
-                    <p class="text-slate-600 text-sm mb-4">Cashless treatment across 10,000+ network hospitals for individuals and families.</p>
-                    <a href="#home" class="text-blue-600 text-sm font-bold hover:underline">Know More &rarr;</a>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Health Insurance</h3>
+                    <p class="text-slate-600 text-xs mb-4">Cashless hospitalization across 10,000+ network hospitals.</p>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:border-blue-500 transition">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4">
+                <div class="bg-white p-8 rounded-2xl pb-card">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl mb-4">
                         <i class="fa-solid fa-shield"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Term Life Insurance</h3>
-                    <p class="text-slate-600 text-sm mb-4">Secure your loved ones with high life cover up to ₹2 Crore at affordable rates.</p>
-                    <a href="#home" class="text-emerald-600 text-sm font-bold hover:underline">Know More &rarr;</a>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Term Life Insurance</h3>
+                    <p class="text-slate-600 text-xs mb-4">High life cover up to ₹2 Crore at affordable monthly rates.</p>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:border-blue-500 transition">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl mb-4">
+                <div class="bg-white p-8 rounded-2xl pb-card">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-4">
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">SIP & Mutual Funds</h3>
-                    <p class="text-slate-600 text-sm mb-4">Disciplined wealth creation tailored for your long-term goals and retirement.</p>
-                    <a href="#home" class="text-indigo-600 text-sm font-bold hover:underline">Know More &rarr;</a>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">SIP & Mutual Funds</h3>
+                    <p class="text-slate-600 text-xs mb-4">Disciplined wealth creation for long-term financial freedom.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="calculators" class="py-16 px-6 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-3xl mx-auto bg-white p-8 sm:p-12 rounded-3xl shadow-card border border-slate-200">
+    <section id="calculators" class="py-16 px-6 bg-white border-t border-slate-200">
+        <div class="max-w-3xl mx-auto bg-slate-50 p-8 rounded-3xl border border-slate-200 pb-card">
             <div class="text-center mb-8">
-                <h2 class="text-2xl font-bold text-slate-900 mb-2">Interactive SIP Wealth Calculator</h2>
+                <h2 class="text-2xl font-bold text-slate-900 mb-1">SIP Wealth Calculator</h2>
                 <p class="text-slate-500 text-xs">Calculate your investment returns instantly.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
                 <div class="space-y-4">
                     <div>
-                        <label class="block text-xs text-slate-600 font-semibold mb-1">Monthly Investment (₹)</label>
-                        <input type="number" id="sip-amount" value="5000" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-blue-600" oninput="calculateSIP()">
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Monthly Investment (₹)</label>
+                        <input type="number" id="sip-amount" value="5000" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-blue-600" oninput="calculateSIP()">
                     </div>
                     <div>
-                        <label class="block text-xs text-slate-600 font-semibold mb-1">Expected Return (% p.a)</label>
-                        <input type="number" id="sip-rate" value="12" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-blue-600" oninput="calculateSIP()">
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Expected Return (% p.a)</label>
+                        <input type="number" id="sip-rate" value="12" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-blue-600" oninput="calculateSIP()">
                     </div>
                     <div>
-                        <label class="block text-xs text-slate-600 font-semibold mb-1">Time Period (Years)</label>
-                        <input type="number" id="sip-years" value="10" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-blue-600" oninput="calculateSIP()">
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Time Period (Years)</label>
+                        <input type="number" id="sip-years" value="10" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-blue-600" oninput="calculateSIP()">
                     </div>
                 </div>
 
-                <div class="bg-blue-900 text-white p-6 rounded-2xl space-y-4 shadow-lg">
+                <div class="bg-blue-600 text-white p-6 rounded-2xl space-y-4 shadow-md">
                     <div>
-                        <p class="text-[11px] text-blue-200">Total Invested Amount</p>
-                        <h4 id="res-invested" class="text-xl font-bold">₹ 6,00,000</h4>
+                        <p class="text-[11px] text-blue-100">Total Invested Amount</p>
+                        <h4 id="res-invested" class="text-lg font-bold">₹ 6,00,000</h4>
                     </div>
                     <div>
-                        <p class="text-[11px] text-blue-200">Estimated Wealth Gain</p>
-                        <h4 id="res-gain" class="text-xl font-bold text-emerald-400">₹ 5,61,695</h4>
+                        <p class="text-[11px] text-blue-100">Estimated Wealth Gain</p>
+                        <h4 id="res-gain" class="text-lg font-bold text-emerald-300">₹ 5,61,695</h4>
                     </div>
-                    <div class="pt-3 border-t border-blue-800">
-                        <p class="text-[11px] text-blue-200">Expected Future Value</p>
-                        <h4 id="res-total" class="text-2xl font-extrabold text-sky-300">₹ 11,61,695</h4>
+                    <div class="pt-3 border-t border-blue-500">
+                        <p class="text-[11px] text-blue-100">Expected Future Value</p>
+                        <h4 id="res-total" class="text-2xl font-extrabold text-white">₹ 11,61,695</h4>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
- <section id="reviews" class="py-16 px-6 bg-white border-t border-slate-200">
+    <section id="reviews" class="py-16 px-6 bg-slate-50 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-2">What Our Customers Say</h2>
-                <p class="text-slate-600 text-sm">Over 5,500+ families trust Vishwas Finserv for their insurance and investments.</p>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">What Our Customers Say</h2>
+                <p class="text-slate-600 text-sm">Over 5,500+ families trust Vishwas Finserv.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div class="bg-white p-6 rounded-2xl pb-card">
                     <div class="flex text-amber-400 text-xs mb-3">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
@@ -311,7 +267,7 @@
                     <h5 class="text-slate-900 font-bold text-xs">Rahul Sharma</h5>
                     <span class="text-[10px] text-slate-400">Delhi</span>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div class="bg-white p-6 rounded-2xl pb-card">
                     <div class="flex text-amber-400 text-xs mb-3">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
@@ -319,7 +275,7 @@
                     <h5 class="text-slate-900 font-bold text-xs">Ananya Patel</h5>
                     <span class="text-[10px] text-slate-400">Business Owner</span>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div class="bg-white p-6 rounded-2xl pb-card">
                     <div class="flex text-amber-400 text-xs mb-3">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
@@ -331,26 +287,11 @@
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-slate-400 py-12 px-6 text-center text-xs border-t border-slate-800">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
-            <span class="text-white font-bold text-sm">Vishwas Finserv Services</span>
-            <div class="flex space-x-6 text-slate-400">
-                <a href="#home" class="hover:text-white">Home</a>
-                <a href="#about" class="hover:text-white">About Us</a>
-                <a href="#services" class="hover:text-white">Services</a>
-                <a href="#reviews" class="hover:text-white">Reviews</a>
-            </div>
-        </div>
-        <p>&copy; 2026 Vishwas Finserv Services. All rights reserved. Designed for excellence.</p>
+    <footer class="bg-slate-900 text-slate-400 py-8 px-6 text-center text-xs border-t border-slate-800">
+        <p>&copy; 2026 Vishwas Finserv Services. All rights reserved. Disclaimer applies.</p>
     </footer>
 
     <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
         function calculateSIP() {
             const p = parseFloat(document.getElementById('sip-amount').value) || 0;
             const i = (parseFloat(document.getElementById('sip-rate').value) / 12 / 100) || 0;
